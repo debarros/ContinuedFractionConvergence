@@ -8,13 +8,25 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      sliderInput("realA","Real component of a", min = -10, max = 10, value = 2),
-      sliderInput("imagA","Imaginary component of a", min = -10, max = 10, value = 1),
-      sliderInput("realB","Real component of b", min = -10, max = 10, value = 1),
-      sliderInput("imagB","Imaginary component of b", min = -10, max = 10, value = 2),
-      sliderInput("realStart","Real component of initial value", min = -10, max = 10, value = 1),
-      sliderInput("imagStart","Imaginary component of initial value", min = -10, max = 10, value = 0),
-      sliderInput("iterations","Number of iterations", 
+      div(style="display:inline-block","a = "),
+      div(style="display:inline-block",numericInput(inputId = "realA",label = NULL,value = 2, width = "100px")),
+      div(style="display:inline-block"," + "),
+      div(style="display:inline-block",numericInput(inputId = "imagA",label = NULL, value = 1, width = "100px")),
+      div(style="display:inline-block","i"),
+      br(),
+      div(style="display:inline-block","b = "),
+      div(style="display:inline-block",numericInput(inputId = "realB",label = NULL, value = 1, width = "100px")),
+      div(style="display:inline-block"," + "),
+      div(style="display:inline-block",numericInput(inputId = "imagB",label = NULL, value = 2, width = "100px")),
+      div(style="display:inline-block","i"),
+      br(),
+      div(style="display:inline-block","start = "),
+      div(style="display:inline-block",numericInput(inputId = "realStart",label = NULL, value = 1, width = "100px")),
+      div(style="display:inline-block"," + "),
+      div(style="display:inline-block",numericInput(inputId = "imagStart",label = NULL, value = 0, width = "100px")),
+      div(style="display:inline-block","i"),
+      br(),
+      sliderInput(inputId = "iterations","Number of iterations", 
                   min = 2, max = 1000, value = 2, step = 1, animate = animationOptions(interval=300))
     ),
     

@@ -6,6 +6,7 @@ shinyServer(function(input, output) {
   a = reactive(complex(real = input$realA, imaginary = input$imagA))
   b = reactive(complex(real = input$realB, imaginary = input$imagB))
   starter = reactive(complex(real = input$realStart, imaginary = input$imagStart))
+  
   masterplot = reactive({
     x = complex(length.out = input$iterations)
     x[1] = starter()
